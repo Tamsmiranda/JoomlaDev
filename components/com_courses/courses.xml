@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+	<name>Courses</name>
+	<author>Thiago Miranda</author>
+	<creationDate></creationDate>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<!-- The version string is recorded in the components table -->
+	<version>0.8 beta </version>
+	<!-- The description is optional and defaults to the name -->
+	<description>asfasdf</description> 
+	<!-- Install Database Section -->
+	<install>
+		<sql>
+		<file driver="mysql" charset="utf8">install.mysql.sql</file>
+		</sql>
+	<!--</install>-->
+	
+</install>
+<install type="library" version="1.5.0">
+	<files folder="pagseguro">
+		<folder>pagseguro</folder>
+	</files>
+</install>
+
+<uninstall>
+<sql>
+<file driver="mysql" charset="utf8">uninstall.mysql.sql</file>
+</sql>
+</uninstall>
+<!-- Custom Install Script to execute -->
+<installfile>install.courses.php</installfile>
+    <!-- Custom Uninstall Script to execute -->
+<uninstallfile>uninstall.courses.php</uninstallfile>
+  
+<!-- Site Main File Copy Section -->
+<files folder="component">
+<filename>courses.php</filename>
+<filename>controller.php</filename>
+<filename>index.html</filename>
+<folder>models</folder>
+<folder>views</folder>
+<folder>assets</folder>
+</files>
+  <!-- Language -->
+  <languages folder="component/language/">
+  <language tag="en-GB">en-GB.com_courses.ini</language>
+  </languages>
+
+<administration>
+<menu>Courses</menu>
+<submenu>
+<menu link="option=com_categories&amp;section=com_courses">Categories</menu>
+<menu link="option=com_courses">Courses</menu>
+<menu link="option=com_courses&amp;controller=videos&amp;view=videos">Videos</menu>
+</submenu>
+ <!-- Administration Main File Copy Section -->
+  <files>
+<filename>courses.xml</filename>
+</files>
+<files folder="administrator">
+<filename>install.mysql.sql</filename>
+<filename>uninstall.mysql.sql</filename>
+<filename>courses.php</filename>
+<filename>controller.php</filename>
+<filename>config.xml</filename>
+<folder>controllers</folder>
+<folder>elements</folder>
+<folder>helpers</folder>
+<folder>models</folder>
+<folder>tables</folder>
+<folder>views</folder>
+</files>
+<!-- Language Administrator-->
+  <languages folder="administrator/language/">
+  <language tag="en-GB">en-GB.com_courses.menu.ini</language>
+  <language tag="en-GB">en-GB.com_courses.ini</language>
+  </languages>
+  </administration>
+</install>
