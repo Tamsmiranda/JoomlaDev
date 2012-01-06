@@ -4,5 +4,5 @@
 
 	use Symfony\Component\Console as Console;
 
-	$application = new Console\Application('Demo', '1.0.0');
+	$application = new Console\Application('Jake', '0.0.1');
 	$application->run();
