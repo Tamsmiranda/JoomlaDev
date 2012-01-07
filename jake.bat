@@ -1,7 +1,7 @@
 @echo.
 @echo off
 
-php jake.php
+php -q jake.php %*
 
 echo.
 
